@@ -1,13 +1,23 @@
-export default reducer = (state = 0, action) => {
-    if (action.type === 'deposite') {
-        return state + action.payload;
-    }
-    else if (action.type === 'withdraw' && state - action.payload >= 0) {
+import { createSlice } from '@reduxjs/toolkit'
 
-        return state - action.payload;
-    }
-    else {
-        return state;
-    }
-
+const initialState = {
+    value: 10000
 }
+
+export const amountReducer = createSlice({
+    name: 'amount',
+    initialState,
+    reducers: {
+        deposite: (state, action) => {
+            state.value = state.value + action.payload;
+        },
+        withdraw: (state, action) => {
+            state.value = state.value - action.payload;
+        }
+    },
+})
+
+// Action creators are generated for each case reducer function
+export const { deposite, withdraw } = amountReducer.actions
+
+export default amountReducer.reducer
