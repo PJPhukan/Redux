@@ -21,7 +21,7 @@ const Navber = () => {
 
                         </ul>
                         <div>
-                            <button disabled className="btn btn-primary">Your Balance : 0</button>
+                            <button disabled className="btn btn-primary">Your Balance : 10,000</button>
                         </div>
                     </div>
                 </div>
